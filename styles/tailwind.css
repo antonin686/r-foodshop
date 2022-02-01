@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-main {
+  @apply text-red-500;
+}
+
+.menu-open {
+  animation: menuOpenAni 0.5s forwards;
+}
+
+.menu-close {
+  animation: menuCloseAni 0.5s forwards;
+}
+
+@keyframes menuOpenAni {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 12rem;
+  }
+}
+
+@keyframes menuCloseAni {
+  0% {
+    height: 12rem;
+  }
+  100% {
+    height: 0px;
+  }
+}

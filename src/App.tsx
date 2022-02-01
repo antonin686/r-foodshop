@@ -1,12 +1,18 @@
-import React from 'react';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layouts/Layout";
+import Welcome from "./pages/Welcome";
 
+function Test() {
+  return <div>Hello</div>;
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <Routes>
+      <Route path="/*" element={<Layout />}>
+        <Route path="" element={<Welcome/>}/>
+      </Route>
+      <Route path="/admin" element={Test} />
+    </Routes>
   );
 }
 
