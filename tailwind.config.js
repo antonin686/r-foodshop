@@ -4,12 +4,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      keyframes: {
-        wiggle: {
-          '0%': { height: '0px' },
-          '50%': { height: '200px' },
-          '100%': { height: '500px' },
-        }
+      spacing: {
+        '112': '28rem',
+        '128': '32rem',
       }
     },
   },
