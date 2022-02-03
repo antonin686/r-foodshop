@@ -21,7 +21,7 @@
 }
 
 .theme-bg{
-  @apply text-red-400;
+  @apply bg-red-500;
 }
 
 .theme-border{
@@ -30,6 +30,10 @@
 
 .text-star{
   color: #F7CD2E;
+}
+
+.z-top{
+  z-index: 9999;
 }
 
 .banner-floting-img {
@@ -52,7 +56,7 @@
 }
 
 .hover-img-card {
-  @apply w-96 gap-4 shadow-lg p-4 rounded-lg border relative overflow-hidden;
+  @apply md:w-96 w-80 gap-4 shadow-lg p-4 rounded-lg border relative overflow-hidden;
   background: #fff;
 }
 
@@ -90,6 +94,30 @@
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @keyframes menuOpenAni {
