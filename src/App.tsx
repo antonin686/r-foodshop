@@ -11,6 +11,7 @@ function App() {
     <Routes>
       <Route path="/*" element={<Layout />}>
         <Route path="" element={<Welcome />} />
+        <Route path="categories" element={<Test />} />
         <Route path="categories/:category/products" element={<CategoryProducts />} />
       </Route>
       <Route path="/admin" element={CategoryProducts} />

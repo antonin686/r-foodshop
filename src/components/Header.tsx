@@ -1,6 +1,7 @@
 import { FaUtensils, FaUserAlt } from "react-icons/fa";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   const [menu, setmenu] = useState<number>(0);
@@ -14,39 +15,41 @@ function Header() {
     else return "";
   };
 
+  const navStyling = (navInfo: any) => {
+    return navInfo.isActive ? "border-b-2 theme-border" : "";
+  }
+
   return (
     <header className="relative shadow-lg">
       <nav className="container mx-auto flex flex-wrap justify-around items-center text-xl py-6 relative">
-        <div className="flex items-center gap-2 text-2xl">
+        <Link to="/" className="flex items-center gap-2 text-2xl">
           <FaUtensils className="text-main" /> FoodShop
+        </Link>
+        <div className="md:flex gap-4 hidden">
+          <NavLink className={navStyling} to="/">Home</NavLink>
+          <NavLink className={navStyling} to="/categories">Categories</NavLink>
+          <NavLink className={navStyling} to="/products">Popular</NavLink>
+          <NavLink className={navStyling} to="/about-us">About Us</NavLink>
         </div>
-        <ul className="md:flex gap-3 hidden">
-          <li>Home</li>
-          <li>Categories</li>
-          <li>Popular</li>
-          <li>About Us</li>
-        </ul>
         <button className="md:hidden text-3xl border p-2" onClick={handleMenuClick}>
           {menu === 2 ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
-        <div className="md:flex hidden items-center gap-2">
+        <Link to="/login" className="md:flex hidden items-center gap-2">
           <FaUserAlt className="text-main" /> Login
-        </div>
+        </Link>
       </nav>
 
-      <ul
+      <div
         className={` ${toggler()} h-0 w-full text-lg absolute overflow-hidden z-20 bg-white shadow-lg  flex flex-col gap-2 items-left pl-14`}
       >
-        <li>Home</li>
-        <li>Categories</li>
-        <li>Popular</li>
-        <li>About Us</li>
-        <li>
-          <div className="flex items-center gap-2">
-            <FaUserAlt className="text-main" /> Login
-          </div>
-        </li>
-      </ul>
+        <Link to="/">Home</Link>
+        <Link to="/categories">Categories</Link>
+        <Link to="/products">Popular</Link>
+        <Link to="/about-us">About Us</Link>
+        <Link to="/login" className="flex items-center gap-2">
+          <FaUserAlt className="text-main" /> Login
+        </Link>
+      </div>
     </header>
   );
 }
