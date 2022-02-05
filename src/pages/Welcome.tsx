@@ -52,10 +52,6 @@ function Welcome() {
 
         <ProductList />
       </section>
-
-      <section className="bg-black py-12">
-        <Footer />
-      </section>
     </>
   );
 }

@@ -9,6 +9,7 @@ interface IimageHoverCard {
   title: string;
   desc: string;
   cover_img: string;
+  slug: string;
 }
 
 function CategoryList() {
@@ -20,7 +21,7 @@ function CategoryList() {
         items.map((item: IimageHoverCard, index: number) => (
           <ImageHoverCard
             key={index}
-            eid={item.id}
+            slug={item.slug}
             icon={item.icon}
             title={item.title}
             desc={item.desc}
