@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import CategoryList from "../components/CategoryList";
+import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import img from "../home-bg.jpg";
 import sideImg from "../home-img.png";
@@ -50,6 +51,10 @@ function Welcome() {
         </h1>
 
         <ProductList />
+      </section>
+
+      <section className="bg-black py-12">
+        <Footer />
       </section>
     </>
   );
