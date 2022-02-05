@@ -13,7 +13,7 @@
 
 
 .text-main {
-  @apply text-red-400;
+  @apply text-red-500;
 }
 
 .theme-text {
@@ -88,8 +88,8 @@
 
 .price-on-card{
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   background-color: rgb(239 68 68);
   color: #fff;
   padding: 0.5rem 1rem;

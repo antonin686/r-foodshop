@@ -17,7 +17,7 @@ interface IProduct {
 }
 
 function ProductList({ query = "all" }: Iprops) {
-  const [items]: any = useGetFetch(ProductQueryUrl + "/all");
+  const [items]: any = useGetFetch(`${ProductQueryUrl}/${query}`);
   return (
     <div className="flex flex-wrap justify-center gap-8">
       {items ? (

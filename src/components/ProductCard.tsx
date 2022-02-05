@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+
 import Modal from "./Modal";
 import Rating from "./Rating";
 
@@ -38,8 +39,10 @@ function ProductCard({ title, desc, price, rating, image, slug }: Iprops) {
         onClick={() => (modalOpen ? close() : open())}
         className="overlay-hidden md:w-96 w-80 border p-4 gap-4 shadow-lg rounded-lg flex flex-col items-center relative"
       >
-        <span className="price-on-card"> BDT {price} </span>
-        <img src={image} alt="" className="w-full h-60 rounded-lg" />
+        <div className="relative">
+          <span className="price-on-card"> BDT {price} </span>
+          <img src={image} alt={title} className="w-full h-60 rounded-lg" />
+        </div>
         <h1 className="text-3xl font-bold text-center">{title}</h1>
         <Rating rating={rating} />
 
@@ -49,9 +52,14 @@ function ProductCard({ title, desc, price, rating, image, slug }: Iprops) {
       <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
         {modalOpen && (
           <Modal modalOpen={modalOpen} handleClose={close}>
-            <motion.div className="overlay-hidden md:w-96 w-80 border p-4 gap-4 shadow-lg bg-white rounded-lg flex flex-col items-center relative">
-              <span className="price-on-card"> BDT {price} </span>
-              <img src={image} alt={title} className="w-full h-60 rounded-lg" />
+            <div className="overlay-hidden md:w-96 w-80 border p-4 gap-4 shadow-lg bg-white rounded-lg flex flex-col items-center">
+              <div className="w-full flex justify-end ">
+                <button className="c-primary-btn font-bold" onClick={close}>Close</button>
+              </div>
+              <div className="relative">
+                <span className="price-on-card"> BDT {price} </span>
+                <img src={image} alt={title} className="w-full h-60 rounded-lg" />
+              </div>
               <h1 className="text-3xl font-bold text-center">{title}</h1>
               <Rating rating={rating} />
               <div className="flex gap-2 text-lg items-center">
@@ -86,7 +94,7 @@ function ProductCard({ title, desc, price, rating, image, slug }: Iprops) {
               >
                 Order
               </button>
-            </motion.div>
+            </div>
           </Modal>
         )}
       </AnimatePresence>

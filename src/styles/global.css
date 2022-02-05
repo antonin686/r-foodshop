@@ -512,16 +512,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
-.z-20 {
-  z-index: 20;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
 .z-40 {
   z-index: 40;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .mx-auto {
@@ -664,6 +660,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -838,7 +838,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-main {
   --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity));
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .theme-text {
@@ -957,8 +957,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .price-on-card{
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   background-color: rgb(239 68 68);
   color: #fff;
   padding: 0.5rem 1rem;
