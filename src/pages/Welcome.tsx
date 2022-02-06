@@ -27,30 +27,36 @@ function Welcome() {
   return (
     <>
       <section>
-        <Banner
-          bg_img={banner.bg_img}
-          side_img={banner.side_img}
-          main_text={banner.main_text}
-          sub_text={banner.sub_text}
-          link={banner.link}
-          link_text={banner.link_text}
-        />
+        <div className="container mx-auto">
+          <Banner
+            bg_img={banner.bg_img}
+            side_img={banner.side_img}
+            main_text={banner.main_text}
+            sub_text={banner.sub_text}
+            link={banner.link}
+            link_text={banner.link_text}
+          />
+        </div>
       </section>
 
       <section className="bg-gray-100 py-12">
-        <h1 className="text-center mb-8 text-4xl font-bold">
-          Our <span className="theme-text">Categories</span>
-        </h1>
+        <div className="container mx-auto ">
+          <h1 className="text-center mb-8 text-4xl font-bold">
+            Our <span className="theme-text">Categories</span>
+          </h1>
 
-        <CategoryList />
+          <CategoryList />
+        </div>
       </section>
 
       <section className="bg-white py-12">
-        <h1 className="text-center mb-8 text-4xl font-bold">
-          Most <span className="theme-text">Popular</span>
-        </h1>
+        <div className="container mx-auto">
+          <h1 className="text-center mb-8 text-4xl font-bold">
+            Most <span className="theme-text">Popular</span>
+          </h1>
 
-        <ProductList />
+          <ProductList query="popular" />
+        </div>
       </section>
     </>
   );

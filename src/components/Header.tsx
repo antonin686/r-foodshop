@@ -28,7 +28,7 @@ function Header() {
         <div className="md:flex gap-4 hidden">
           <NavLink className={navStyling} to="/">Home</NavLink>
           <NavLink className={navStyling} to="/categories">Categories</NavLink>
-          <NavLink className={navStyling} to="/products">Popular</NavLink>
+          <NavLink className={navStyling} to="/products">Foods</NavLink>
           <NavLink className={navStyling} to="/about-us">About Us</NavLink>
         </div>
         <button className="md:hidden text-3xl border p-2" onClick={handleMenuClick}>
@@ -44,7 +44,7 @@ function Header() {
       >
         <Link to="/">Home</Link>
         <Link to="/categories">Categories</Link>
-        <Link to="/products">Popular</Link>
+        <Link to="/products">Foods</Link>
         <Link to="/about-us">About Us</Link>
         <Link to="/login" className="flex items-center gap-2">
           <FaUserAlt className="text-main" /> Login

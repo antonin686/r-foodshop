@@ -1,16 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import axios, { AxiosRequestConfig } from "axios";
 
-function useGetFetch(url: string | null) {
+function usePostFetch(url: string , data: any) {
   
 
   const [state, setstate] = useState<any>(null);
 
-  const getMethod = useCallback(() => {
-    let option: AxiosRequestConfig = {};
-    if(!url) return null;
+  const postMethod = useCallback(() => {
     axios
-      .get(url, option)
+      .post(url, data)
       .then((response) => {
         setstate(response.data);
       })
@@ -34,14 +32,14 @@ function useGetFetch(url: string | null) {
   }, [url]);
 
   useEffect(() => {
-    getMethod();
-  }, [url, getMethod]);
+    postMethod();
+  }, [url, postMethod]);
 
   const renewState = () => {
-    getMethod();
+    postMethod();
   };
 
   return [state, renewState];
 }
 
-export default useGetFetch;
+export default usePostFetch;

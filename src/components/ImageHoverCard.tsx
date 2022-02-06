@@ -10,7 +10,7 @@ interface Iprops {
 
 function ImageHoverCard({ slug, icon, title, desc, cover_img }: Iprops) {
   return (
-    <Link className="hover-img-card" to={`categories/${slug}/products`}>
+    <Link className="hover-img-card" to={`/categories/${slug}/products`}>
       <img className="image" src={cover_img} alt={title} />
       <div className="content">
         <img className="w-20 h-20" src={icon} alt={title + " Icon"} />

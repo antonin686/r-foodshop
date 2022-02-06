@@ -37,11 +37,11 @@ function ProductCard({ title, desc, price, rating, image, slug }: Iprops) {
     <>
       <motion.button
         onClick={() => (modalOpen ? close() : open())}
-        className="overlay-hidden md:w-96 w-80 border p-4 gap-4 shadow-lg rounded-lg flex flex-col items-center relative"
+        className="overlay-hidden w-80 border p-4 gap-4 shadow-lg rounded-lg flex flex-col items-center relative"
       >
         <div className="relative">
           <span className="price-on-card"> BDT {price} </span>
-          <img src={image} alt={title} className="w-full h-60 rounded-lg" />
+          <img src={image} alt={title} className="w-full h-52 rounded-lg" />
         </div>
         <h1 className="text-3xl font-bold text-center">{title}</h1>
         <Rating rating={rating} />
@@ -58,7 +58,7 @@ function ProductCard({ title, desc, price, rating, image, slug }: Iprops) {
               </div>
               <div className="relative">
                 <span className="price-on-card"> BDT {price} </span>
-                <img src={image} alt={title} className="w-full h-60 rounded-lg" />
+                <img src={image} alt={title} className="w-full h-52 rounded-lg" />
               </div>
               <h1 className="text-3xl font-bold text-center">{title}</h1>
               <Rating rating={rating} />

@@ -5,6 +5,8 @@ import ProductCard from "./ProductCard";
 
 interface Iprops {
   query?: string;
+  data?: any;
+  position?: string;
 }
 
 interface IProduct {
@@ -16,10 +18,15 @@ interface IProduct {
   rating: number;
 }
 
-function ProductList({ query = "all" }: Iprops) {
-  const [items]: any = useGetFetch(`${ProductQueryUrl}/${query}`);
+function ProductList({ query = "all", data, position = "center" }: Iprops) {
+  const url = data ? null : `${ProductQueryUrl}/${query}`;
+
+  let [items]: any = useGetFetch(url);
+
+  if (data) items = data;
+
   return (
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className={`flex flex-wrap justify-center md:justify-${position} gap-8`}>
       {items ? (
         items.map((item: IProduct, index: number) => (
           <ProductCard
