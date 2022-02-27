@@ -3,21 +3,18 @@ import Backdrop from "./Backdrop";
 
 const dropIn = {
   hidden: {
-    y: "-100vh",
+    width: '0px',
     opacity: 0,
   },
   visible: {
-    y: "0",
+    width: '22rem',
     opacity: 1,
     transition: {
       duration: 0.1,
-      type: "spring",
-      damping: 25,
-      stiffness: 500,
     },
   },
   exit: {
-    y: "100vh",
+    width: '0px',
     opacity: 0,
     transition: {
       duration: 0.1,
@@ -25,12 +22,13 @@ const dropIn = {
   },
 };
 
-function Modal({ handleClose, children }: any) {
+
+function Sidebar({ handleClose, children }: any) {
   return (
     <Backdrop onClick={handleClose}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="px-2"
+        className="absolute bg-white h-full right-0 top-0 z-50"
         variants={dropIn}
         initial="hidden"
         animate="visible"
@@ -42,4 +40,4 @@ function Modal({ handleClose, children }: any) {
   );
 }
 
-export default Modal;
+export default Sidebar;

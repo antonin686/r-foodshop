@@ -1,6 +1,6 @@
+import { useContext } from "react";
 import Banner from "../components/Banner";
 import CategoryList from "../components/CategoryList";
-import Footer from "../components/Footer";
 import ProductList from "../components/ProductList";
 import img from "../home-bg.jpg";
 import sideImg from "../home-img.png";
@@ -24,6 +24,7 @@ function Welcome() {
     link: "#",
     link_text: "Order Now",
   };
+
   return (
     <>
       <section>

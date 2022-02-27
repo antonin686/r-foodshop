@@ -31,12 +31,7 @@ function ProductList({ query = "all", data, position = "center" }: Iprops) {
         items.map((item: IProduct, index: number) => (
           <ProductCard
             key={index}
-            title={item.title}
-            desc={item.desc}
-            price={item.price}
-            image={item.image}
-            slug={item.slug}
-            rating={4.5}
+            product={item}
           />
         ))
       ) : (
