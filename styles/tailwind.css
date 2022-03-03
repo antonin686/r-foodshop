@@ -28,12 +28,24 @@
   @apply border-red-500;
 }
 
+.theme-bg:hover{
+  @apply bg-red-700
+}
+
 .text-star{
   color: #F7CD2E;
 }
 
 .z-top{
   z-index: 9999;
+}
+
+.c-input{
+  @apply border-2 rounded w-full p-2 rounded-lg
+}
+
+.login-icon{
+  @apply p-3 rounded-full text-white
 }
 
 .banner-floting-img {

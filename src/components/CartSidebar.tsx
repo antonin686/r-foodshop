@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import CartBtn from "./CartBtn";
 import CartItem from "./CartItem";
@@ -12,6 +12,13 @@ function CartSidebar() {
   const close = () => setModalOpen(false);
   const open = () => setModalOpen(true);
   const cart = useCart();
+  const navigate = useNavigate();
+  
+  const checkoutHandler = () => {
+    close();
+    navigate("/checkout");
+  };
+
   return (
     <div>
       <CartBtn clickHandler={open} />
@@ -47,12 +54,13 @@ function CartSidebar() {
                   <div>Total</div>
                   <div>{cart.total} BDT</div>
                 </div>
-                <Link
-                  to={"/checkout"}
+                <button
+                  type="button"
+                  onClick={checkoutHandler}
                   className=" theme-bg text-center text-white py-4 hover:bg-red-700"
                 >
                   Checkout
-                </Link>
+                </button>
               </div>
             </motion.div>
           </Sidebar>

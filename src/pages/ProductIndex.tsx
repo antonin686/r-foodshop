@@ -25,7 +25,7 @@ function ProductIndex() {
   });
 
   return (
-    <div className="py-12 container mx-auto">
+    <div className="py-12 mx-auto">
       <ProductFilter filterConfig={config} />
     </div>
   );

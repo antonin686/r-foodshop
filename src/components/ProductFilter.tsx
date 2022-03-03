@@ -21,8 +21,6 @@ function ProductFilter({ filterConfig }: Iprops) {
     });
   }, [config]);
 
-  console.log(data)
-
   return (
     <div>
       <h1 className="text-center mb-8 text-4xl font-bold">

@@ -7,6 +7,7 @@ module.exports = {
       spacing: {
         '112': '28rem',
         '128': '32rem',
+        'screen-75': '75vh'
       },
       keyframes: {
         wiggle: {

@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaSearchLocation } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-black py-12 mt-auto">
+    <footer className="bg-black py-10 mt-auto">
       <div className="container mx-auto">
         <div className="flex justify-center flex-wrap gap-8">
           <RoundedBtn
@@ -23,7 +23,7 @@ function Footer() {
         </div>
         <p className="text-white text-center mt-8 text-2xl">
           Developed by{" "}
-          <a className="theme-text" href="https://antoninislam.com/">
+          <a className="theme-text hover:underline" target="_blank" href="https://antoninislam.com/">
             Md Antonin Islam{" "}
           </a>{" "}
           | All Rights Reserved!
