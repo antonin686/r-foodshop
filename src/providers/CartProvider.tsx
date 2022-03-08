@@ -1,6 +1,4 @@
-import { Item } from "framer-motion/types/components/Reorder/Item";
-import { toNamespacedPath } from "path/posix";
-import { useEffect, useReducer, useState } from "react";
+import { useReducer } from "react";
 import { CartContext } from "./_Contexts";
 
 function CartProvider(props: any) {

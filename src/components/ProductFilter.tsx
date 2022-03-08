@@ -1,22 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ProductQueryUrl } from "../helpers/apiLinks";
+import { ProductFilterUrl } from "../helpers/apiLinks";
 import ProductFilterBar from "./ProductFilterBar";
 import ProductList from "./ProductList";
 import Spinner from "./Spinner";
 
 interface Iprops {
-    filterConfig: object;
+  filterConfig: object;
 }
 
 function ProductFilter({ filterConfig }: Iprops) {
-
   const [config, setConfig] = useState(filterConfig);
   const [data, setData] = useState<any>(null);
-
   useEffect(() => {
     setData(null);
-    axios.post(ProductQueryUrl, { config: config }).then((res) => {
+    axios.post(ProductFilterUrl, { config: config }).then((res) => {
       setData(res.data);
     });
   }, [config]);
@@ -34,7 +32,6 @@ function ProductFilter({ filterConfig }: Iprops) {
           {data ? <ProductList data={data} position="start" /> : <Spinner />}
         </div>
       </div>
-      
     </div>
   );
 }

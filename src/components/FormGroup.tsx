@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
   const {
@@ -17,6 +18,7 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
                     ...child.props,
                     register,
                     key: child.props.name,
+                    errors,
                   },
                 })
               : child;
@@ -24,7 +26,7 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
         : children}
 
       {submitBtn && (
-        <button className="theme-bg text-white rounded-lg w-full p-2 ">
+        <button type="submit" className="theme-bg text-white rounded-lg w-full p-2 ">
           {submitBtn}
         </button>
       )}
@@ -32,8 +34,64 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
   );
 }
 
-function Input({ register, name, ...rest }: any) {
-  return <input {...register(name)} {...rest} />;
+function Input({ register, name, rq = true, rule, cStyle, errors, ...rest }: any) {
+  rule = { ...rule, required: rq };
+
+  if (!cStyle) {
+    cStyle = "c-input";
+  }
+
+  return (
+    <div className="relative">
+      <label className="capitalize">
+        {name} {!rq && "(Optional)"}
+      </label>
+      <input {...register(name, rule)} className={cStyle} {...rest} />
+      <p className="text-red-600">{showError(name, errors)}</p>
+    </div>
+  );
 }
 
-export { Form, Input };
+function InputPass({ register, name, rq = true, rule, cStyle, errors, ...rest }: any) {
+  const [show, setShow] = useState(false);
+  rule = { ...rule, required: rq };
+  if (!cStyle) cStyle = "c-input";
+
+  return (
+    <div className="relative">
+      <label className="capitalize">
+        {name} {!rq && "(Optional)"}
+      </label>
+      <input
+        type={show ? "text" : "password"}
+        {...register(name, rule)}
+        className={cStyle}
+        {...rest}
+      />
+      <button
+        type="button"
+        className="absolute right-4 text-xl top-9"
+        onClick={() => setShow(!show)}
+      >
+        {!show ? <FaEye /> : <FaEyeSlash />}
+      </button>
+      <p className="text-red-600">{showError(name, errors)}</p>
+    </div>
+  );
+}
+
+function showError(name: string, errors: any) {
+  if (errors[name]?.message) {
+    return errors[name].message;
+  } else {
+    if (errors[name]?.type == "required") {
+      return (
+        <>
+          *<span className="capitalize">{name}</span> is required
+        </>
+      );
+    }
+  }
+}
+
+export { Form, Input, InputPass };

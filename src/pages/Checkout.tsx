@@ -1,17 +1,41 @@
 import { Link } from "react-router-dom";
+import CartItem from "../components/CartItem";
+import useAuth from "../hooks/useAuth";
 import useCart from "../hooks/useCart";
 
 function Checkout() {
   const cart = useCart();
-  const auth = false;
+  const auth = useAuth();
 
   return (
     <div className="container mx-auto py-12">
       <div className="grid grid-cols-12 gap-8 ">
-        {auth ? (
+        {auth.token ? (
           <>
-            <div className="col-span-12 md:col-span-3 md:p-0 p-4">dsa</div>
-            <div className="col-span-12 md:col-span-9"></div>
+            <div className="col-span-12 md:col-span-3 p-4 shadow font-bold">Location</div>
+            <div className="col-span-12 md:col-span-9 p-4 shadow">
+              <p className="text-lg mb-2 font-bold">Order Overview</p>
+              <div className="flex flex-col gap-2">
+                <div className="grid grid-cols-12 border-b">
+                  <div className="col-span-9 font-bold">Product</div>
+                  <div className="col-span-3 font-bold">Total</div>
+                </div>
+                {cart.items.map((item: any, index: number) => (
+                  <div className="grid grid-cols-12 border-b" key={index}>
+                    <div className="col-span-9">
+                      {item.title} x {item.quantity}
+                    </div>
+                    <div className="col-span-3">{item.quantity * item.price} BDT</div>
+                  </div>
+                ))}
+                <div className="grid grid-cols-12 border-b">
+                  <div className="col-span-9 font-bold">Total</div>
+                  <div className="col-span-3 font-bold">{cart.total} BDT</div>
+                </div>
+              </div>
+
+              <button className="c-primary-btn mt-4">Confirm Order</button>
+            </div>
           </>
         ) : (
           <div className="col-span-12 shadow py-12 flex justify-center">
