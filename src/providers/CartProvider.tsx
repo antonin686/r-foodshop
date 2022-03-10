@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { CartContext } from "./_Contexts";
 
 function CartProvider(props: any) {
@@ -33,6 +33,13 @@ function CartProvider(props: any) {
           total += item.quantity * item.price;
         });
         return { ...state, total: total, count: count };
+      case "POPULATE_CART":
+        return {
+          ...state,
+          cart: action.payload.cart,
+          total: action.payload.total,
+          count: action.payload.count,
+        };
       default:
         return state;
     }
