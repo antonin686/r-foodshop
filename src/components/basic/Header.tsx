@@ -1,9 +1,8 @@
 import { FaUtensils, FaUserAlt } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 
 function Header() {
   const [menu, setmenu] = useState<number>(0);
@@ -23,10 +22,9 @@ function Header() {
     return navInfo.isActive ? "border-b-2 theme-border" : "";
   };
 
-  const logOutHandler = () =>{
-    auth.logout()
-  }
-
+  const logOutHandler = () => {
+    auth.logout();
+  };
 
   return (
     <header className="shadow-lg sticky top-0 bg-white z-30">
@@ -59,11 +57,13 @@ function Header() {
             </button>
             <div className="dropdown-content">
               <div>
-                <Link to="/profile">Profile</Link>
+                <Link to="/customer">Account</Link>
               </div>
               <hr />
               <div>
-                <button type="button" onClick={logOutHandler}>Logout</button>
+                <button type="button" onClick={logOutHandler}>
+                  Logout
+                </button>
               </div>
             </div>
           </div>
@@ -82,11 +82,9 @@ function Header() {
         <Link to="/products">Foods</Link>
         <Link to="/about-us">About Us</Link>
         {auth.token ? (
-          <>
-            <button className="flex items-center gap-2" onClick={logOutHandler}>
-              <FiLogOut className="text-main" /> Logout
-            </button>
-          </>
+          <Link to="/customer" className="flex  items-center gap-2">
+            <FaUserAlt className="text-main" /> Account
+          </Link>
         ) : (
           <Link to="/login" className="flex items-center gap-2">
             <FaUserAlt className="text-main" /> Login

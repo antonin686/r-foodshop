@@ -1,7 +1,7 @@
 import ImageHoverCard from "./ImageHoverCard";
 import useGetFetch from "../hooks/useGetFetch";
 import { CategoryUrl } from "../helpers/apiLinks";
-import Spinner from "./Spinner";
+import Spinner from "./basic/Spinner";
 
 interface IimageHoverCard {
   id: string;

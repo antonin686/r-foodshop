@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ProductFilterUrl } from "../helpers/apiLinks";
 import ProductFilterBar from "./ProductFilterBar";
 import ProductList from "./ProductList";
-import Spinner from "./Spinner";
+import Spinner from "./basic/Spinner";
 
 interface Iprops {
   filterConfig: object;

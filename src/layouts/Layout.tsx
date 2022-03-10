@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/basic/Header";
+import Footer from "../components/basic/Footer";
 import CartSidebar from "../components/CartSidebar";
 import CartProvider from "../providers/CartProvider";
 

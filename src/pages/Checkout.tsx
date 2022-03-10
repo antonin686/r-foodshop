@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom";
-import CartItem from "../components/CartItem";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useCart from "../hooks/useCart";
 
 function Checkout() {
   const cart = useCart();
   const auth = useAuth();
+  const navigate = useNavigate();
+  let location = useLocation();
+
+  const loginHandler = () => {
+    navigate("/login", { state: { from: location } });
+  };
 
   return (
     <div className="container mx-auto py-12">
@@ -43,12 +48,12 @@ function Checkout() {
               <span className="bg-red-200 py-4 px-8 rounded-lg text-lg">
                 Please login in order to checkout
               </span>
-              <Link
+              <button
                 className="theme-bg text-white py-2 px-4 rounded-lg hover:scale-110"
-                to="/login"
+                onClick={loginHandler}
               >
                 Login
-              </Link>
+              </button>
             </div>
           </div>
         )}

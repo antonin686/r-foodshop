@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-import Modal from "./Modal";
+import Modal from "./basic/Modal";
 import ProductModal from "./ProductModal";
 import Rating from "./Rating";
 

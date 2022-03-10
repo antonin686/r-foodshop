@@ -1,6 +1,6 @@
 import axios from "axios";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Form, Input } from "../components/FormGroup";
 import SocialLoginBtn from "../components/SocialLoginBtn";
 import { loginUrl } from "../helpers/apiLinks";
@@ -11,12 +11,13 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const auth = useAuth();
   const navigate = useNavigate();
-
+  const location: any = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const onSubmit = (data: any) => {
     axios.post(loginUrl, data).then((res) => {
-      console.log(res.data)
+      // console.log(res.data)
       auth.login(res.data)
-      navigate("/");
+      navigate(from, { replace: true });
     })
   };
 

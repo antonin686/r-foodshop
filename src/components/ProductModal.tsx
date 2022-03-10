@@ -3,7 +3,7 @@ import { MouseEventHandler, useContext, useRef, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import useCart from "../hooks/useCart";
 import { CartContext } from "../providers/_Contexts";
-import Modal from "./Modal";
+import Modal from "./basic/Modal";
 import Rating from "./Rating";
 
 interface Iprops {

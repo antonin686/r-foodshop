@@ -1,4 +1,4 @@
-import RoundedBtn from "./RoundedBtn";
+import RoundedBtn from "../RoundedBtn";
 import { FaPhoneAlt, FaSearchLocation } from "react-icons/fa";
 
 function Footer() {

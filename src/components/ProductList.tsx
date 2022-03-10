@@ -1,6 +1,6 @@
 import useGetFetch from "../hooks/useGetFetch";
 import { ProductQueryUrl } from "../helpers/apiLinks";
-import Spinner from "./Spinner";
+import Spinner from "./basic/Spinner";
 import ProductCard from "./ProductCard";
 
 interface Iprops {
