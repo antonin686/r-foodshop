@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { MouseEventHandler, useContext, useRef, useState } from "react";
+import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import useCart from "../hooks/useCart";
-import { CartContext } from "../providers/_Contexts";
 import Modal from "./basic/Modal";
 import Rating from "./Rating";
 
@@ -26,6 +25,7 @@ function ProductModal({ product, modalOpen, close }: Iprops) {
   const orderHandler = () => {
     product.quantity = quantity;
     cart.add(product);
+    close()
   };
 
   return (
@@ -50,7 +50,7 @@ function ProductModal({ product, modalOpen, close }: Iprops) {
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
-            className="border p-2 text-xl rounded-lg theme-text hover:bg-gray-100"
+            className="border p-2 text-xl rounded-lg text-theme hover:bg-gray-100"
             onClick={minus}
           >
             <AiOutlineMinus />
@@ -65,7 +65,7 @@ function ProductModal({ product, modalOpen, close }: Iprops) {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="border p-2 text-xl rounded-lg theme-text hover:bg-gray-100"
+            className="border p-2 text-xl rounded-lg text-theme hover:bg-gray-100"
             onClick={plus}
           >
             <AiOutlinePlus />

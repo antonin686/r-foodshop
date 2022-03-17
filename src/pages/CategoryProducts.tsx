@@ -6,7 +6,7 @@ function CategoryProducts() {
   return (
     <section className="py-12">
       <h1 className="text-center mb-8 text-4xl font-bold">
-        Food <span className="theme-text">List of</span>{" "}
+        Food <span className="text-theme">List of</span>{" "}
         <span className="capitalize ">{params.category}</span>
       </h1>
       <ProductList query={`categories/${params.category}`} />

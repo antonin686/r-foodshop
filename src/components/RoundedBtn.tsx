@@ -35,7 +35,7 @@ function RoundedBtn({ Icon, title, sub, href, className, onClick }: Iprops) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className={
-            "flex items-center border theme-border rounded-full p-5 gap-2 hover:bg-gray-900 " +
+            "flex items-center border border-theme rounded-full p-5 gap-2 hover:bg-gray-900 " +
             className
           }
           href={href}
@@ -47,7 +47,7 @@ function RoundedBtn({ Icon, title, sub, href, className, onClick }: Iprops) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className={
-            "flex items-center border theme-border rounded-full p-5 gap-2 hover:bg-gray-900 " +
+            "flex items-center border border-theme rounded-full p-5 gap-2 hover:bg-gray-900 " +
             className
           }
           onClick={onClick}

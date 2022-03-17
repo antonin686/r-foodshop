@@ -19,7 +19,7 @@ function Header() {
   };
 
   const navStyling = (navInfo: any) => {
-    return navInfo.isActive ? "border-b-2 theme-border" : "";
+    return navInfo.isActive ? "border-b-2 border-theme" : "";
   };
 
   const logOutHandler = () => {
@@ -30,7 +30,7 @@ function Header() {
     <header className="shadow-lg sticky top-0 bg-white z-30">
       <nav className="container mx-auto flex flex-wrap justify-around items-center text-xl md:py-6 py-3 relative">
         <Link to="/" className="flex items-center gap-2 text-2xl">
-          <FaUtensils className="text-main" /> FoodShop
+          <FaUtensils className="text-theme" /> FoodShop
         </Link>
         <div className="md:flex gap-4 hidden">
           <NavLink className={navStyling} to="/">
@@ -53,7 +53,7 @@ function Header() {
         {auth.token ? (
           <div className="dropdown">
             <button className="md:flex hidden items-center gap-2">
-              <FaUserAlt className="text-main" /> Welcome, {auth.user.username}
+              <FaUserAlt className="text-theme" /> Welcome, {auth.user.username}
             </button>
             <div className="dropdown-content">
               <div>
@@ -69,7 +69,7 @@ function Header() {
           </div>
         ) : (
           <Link to="/login" className="md:flex hidden items-center gap-2">
-            <FaUserAlt className="text-main" /> Login
+            <FaUserAlt className="text-theme" /> Login
           </Link>
         )}
       </nav>
@@ -83,11 +83,11 @@ function Header() {
         <Link to="/about-us">About Us</Link>
         {auth.token ? (
           <Link to="/customer" className="flex  items-center gap-2">
-            <FaUserAlt className="text-main" /> Account
+            <FaUserAlt className="text-theme" /> Account
           </Link>
         ) : (
           <Link to="/login" className="flex items-center gap-2">
-            <FaUserAlt className="text-main" /> Login
+            <FaUserAlt className="text-theme" /> Login
           </Link>
         )}
       </div>

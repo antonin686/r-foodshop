@@ -49,7 +49,7 @@ function Checkout() {
                 Please login in order to checkout
               </span>
               <button
-                className="theme-bg text-white py-2 px-4 rounded-lg hover:scale-110"
+                className="bg-theme text-white py-2 px-4 rounded-lg hover:scale-110"
                 onClick={loginHandler}
               >
                 Login

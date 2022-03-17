@@ -46,7 +46,7 @@ function CartItem({ item }: any) {
         className="absolute right-2"
         onClick={deleteHandler}
       >
-        <FaTrash className="theme-text" />
+        <FaTrash className="text-theme" />
       </motion.button>
       <div className="flex items-center gap-2">
         <img className="w-24" src={item.image} alt="" />
@@ -57,14 +57,14 @@ function CartItem({ item }: any) {
           <motion.button
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
-            className="border p-2 text-xl rounded-lg theme-text hover:bg-gray-100"
+            className="border p-2 text-xl rounded-lg text-theme hover:bg-gray-100"
             onClick={minus}
           >
             <AiOutlineMinus />
           </motion.button>
           <input
             type="number"
-            className="border text-center font-bold rounded-lg w-14 py-1"
+            className="border text-center font-bold text-theme w-14 py-1"
             min={1}
             value={quantity}
             onChange={quantityChangeHandler}
@@ -72,7 +72,7 @@ function CartItem({ item }: any) {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="border p-2 text-xl rounded-lg theme-text hover:bg-gray-100"
+            className="border p-2 text-xl rounded-lg text-theme hover:bg-gray-100"
             onClick={plus}
           >
             <AiOutlinePlus />

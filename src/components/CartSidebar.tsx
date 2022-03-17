@@ -27,7 +27,7 @@ function CartSidebar() {
           <Sidebar modalOpen={modalOpen} handleClose={close}>
             <motion.div className="relative h-full overflow-hidden">
               <motion.div className="flex justify-end ">
-                <motion.div className="h-12 theme-bg w-full text-white text-xl font-bold flex items-center px-4 justify-between">
+                <motion.div className="h-12 bg-theme w-full text-white text-xl font-bold flex items-center px-4 justify-between">
                   Cart
                   <motion.button
                     whileHover={{ scale: 1.2 }}
@@ -57,7 +57,7 @@ function CartSidebar() {
                 <button
                   type="button"
                   onClick={checkoutHandler}
-                  className=" theme-bg text-center text-white py-4 hover:bg-red-700"
+                  className="bg-theme text-center text-white py-4 hover:bg-red-700"
                 >
                   Checkout
                 </button>

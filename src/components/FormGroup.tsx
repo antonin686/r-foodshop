@@ -26,7 +26,7 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
         : children}
 
       {submitBtn && (
-        <button type="submit" className="theme-bg text-white rounded-lg w-full p-2 ">
+        <button type="submit" className="bg-theme text-white rounded-lg w-full p-2 ">
           {submitBtn}
         </button>
       )}

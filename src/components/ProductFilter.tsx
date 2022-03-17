@@ -22,7 +22,7 @@ function ProductFilter({ filterConfig }: Iprops) {
   return (
     <div>
       <h1 className="text-center mb-8 text-4xl font-bold">
-        Food <span className="theme-text">List</span>
+        Food <span className="text-theme">List</span>
       </h1>
       <div className="grid grid-cols-12 gap-8 ">
         <div className="col-span-12 md:col-span-3 md:p-0 p-4">

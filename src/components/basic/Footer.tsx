@@ -23,7 +23,7 @@ function Footer() {
         </div>
         <p className="text-white text-center mt-8 text-2xl">
           Developed by{" "}
-          <a className="theme-text hover:underline" target="_blank" href="https://antoninislam.com/">
+          <a className="text-theme hover:underline" target="_blank" href="https://antoninislam.com/">
             Md Antonin Islam{" "}
           </a>{" "}
           | All Rights Reserved!

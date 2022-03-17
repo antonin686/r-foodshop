@@ -4,32 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
 
 
-
 * {
   font-family: "Nunito", sans-serif;
   transition: all 0.4s linear;
-}
-
-
-
-.text-main {
-  @apply text-red-500;
-}
-
-.theme-text {
-  @apply text-red-500;
-}
-
-.theme-bg{
-  @apply bg-red-500;
-}
-
-.theme-border{
-  @apply border-red-500;
-}
-
-.theme-bg:hover{
-  @apply bg-red-700
 }
 
 .text-star{
@@ -45,7 +22,7 @@
 }
 
 .c-input{
-  @apply border-2 rounded w-full p-2 rounded-lg
+  @apply border-2 w-full p-2 rounded-lg
 }
 
 .login-icon{

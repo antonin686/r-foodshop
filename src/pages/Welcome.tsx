@@ -18,9 +18,11 @@ function Welcome() {
     bg_img: img,
     side_img: sideImg,
     main_text: "Food Made With Love",
-    sub_text:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas accusamus tempore temporibus rem amet laudantium animi optio voluptatum. Natus obcaecati unde porro nostrum ipsam itaque impedit incidunt rem quisquam eos!",
-    link: "#",
+    sub_text: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      Voluptas accusamus tempore temporibus rem amet laudantium 
+      animi optio voluptatum. Natus obcaecati unde porro nostrum 
+      ipsam itaque impedit incidunt rem quisquam eos!`,
+    link: "/products",
     link_text: "Order Now",
   };
 
@@ -42,7 +44,7 @@ function Welcome() {
       <section className="bg-gray-100 py-12">
         <div className="container mx-auto ">
           <h1 className="text-center mb-8 text-4xl font-bold">
-            Our <span className="theme-text">Categories</span>
+            Our <span className="text-theme">Categories</span>
           </h1>
 
           <CategoryList />
@@ -52,7 +54,7 @@ function Welcome() {
       <section className="bg-white py-12">
         <div className="container mx-auto">
           <h1 className="text-center mb-8 text-4xl font-bold">
-            Most <span className="theme-text">Popular</span>
+            Most <span className="text-theme">Popular</span>
           </h1>
 
           <ProductList query="popular" />

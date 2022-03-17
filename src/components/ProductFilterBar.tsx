@@ -46,7 +46,7 @@ function ProductFilterBar({ config, setConfig }: Iprops) {
           <div key={cindex} className="capitalize">
             <hr />
             <div>
-              <h1 className="text-center theme-text text-2xl py-2">{filter.title}</h1>
+              <h1 className="text-center text-theme text-2xl py-2">{filter.title}</h1>
               <hr />
               {filter.items &&
                 filter.items.map((item: any, index: number) => (

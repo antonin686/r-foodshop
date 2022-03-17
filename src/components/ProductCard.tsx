@@ -31,7 +31,7 @@ function ProductCard({ product }: Iprops) {
         <h1 className="text-3xl font-bold text-center">{product.title}</h1>
         <Rating rating={product.rating} />
 
-        <p className="theme-text animate-bounce font-bold text-lg my-2">Click to Order</p>
+        <p className="text-theme animate-bounce font-bold text-lg my-2">Click to Order</p>
       </motion.button>
 
       <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>

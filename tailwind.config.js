@@ -15,6 +15,10 @@ module.exports = {
           '50%': { transform: 'rotate(3deg)' },
         }
       },
+      colors: {
+        'theme': 'rgb(239, 68, 68)',
+        'theme-light': 'rgb(254, 202, 202)',
+      },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
       }
