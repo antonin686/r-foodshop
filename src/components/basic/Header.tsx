@@ -28,7 +28,7 @@ function Header() {
 
   return (
     <header className="shadow-lg sticky top-0 bg-white z-30">
-      <nav className="container mx-auto flex flex-wrap justify-around items-center text-xl md:py-6 py-3 relative">
+      <nav className="container mx-auto flex flex-wrap md:justify-between justify-around items-center text-xl md:py-6 py-3 relative">
         <Link to="/" className="flex items-center gap-2 text-2xl">
           <FaUtensils className="text-theme" /> FoodShop
         </Link>

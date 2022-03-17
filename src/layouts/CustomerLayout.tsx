@@ -2,6 +2,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { FiLogOut } from "react-icons/fi";
 import personImg from "../images/person.png";
+import Breadcrumb from "../components/basic/Breadcrumb";
 
 function CustomerLayout() {
   const auth = useAuth();
@@ -10,12 +11,16 @@ function CustomerLayout() {
   if (!auth.user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
+
   return (
     <div className="container mx-auto">
-      <div className="flex items-center justify-between shadow px-2 py-2 md:px-8 my-4 mx-2 border">
+      <div className="mt-5 mx-4 md:mx-0">
+        <Breadcrumb start="/customer" />
+      </div>
+      <div className="flex items-center justify-between shadow p-4 rounded-lg md:p-0 md:px-8 m-4 md:mx-0 border">
         <div className="flex flex-col md:flex-row text-center md:text-left items-center">
           <img
-            className="w-32"
+            className="w-32 md:block hidden"
             src={auth.user.image ? auth.user.image : personImg}
             alt={auth.user.name}
           />
@@ -30,7 +35,9 @@ function CustomerLayout() {
           </button>
         </div>
       </div>
-      <Outlet />
+      <div className="container mx-auto p-2 md:p-0 my-4">
+        <Outlet />
+      </div>
     </div>
   );
 }

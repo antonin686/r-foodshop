@@ -32,6 +32,8 @@ function Account() {
     },
   ];
 
+  
+
   return (
     <div className="flex flex-wrap gap-4 justify-center mb-4">
       {data.map((d: Idata, index: number) => (
