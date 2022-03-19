@@ -80,6 +80,38 @@ function InputPass({ register, name, rq = true, rule, cStyle, errors, ...rest }:
   );
 }
 
+function Select({
+  register,
+  name,
+  rq = true,
+  rule,
+  cStyle,
+  errors,
+  options,
+  ...rest
+}: any) {
+  rule = { ...rule, required: rq };
+
+  if (!cStyle) {
+    cStyle = "c-input";
+  }
+
+  return (
+    <div className="relative">
+      <label className="capitalize">
+        {name} {!rq && "(Optional)"}
+      </label>
+      <select {...register(name, rule)} className="c-input" {...rest}>
+        <option>Select an item</option>
+        {options.map((option: any, index: number) => (
+          <option key={index} value={option.value}>{option.title}</option>
+        ))}
+      </select>
+      <p className="text-red-600">{showError(name, errors)}</p>
+    </div>
+  );
+}
+
 function showError(name: string, errors: any) {
   if (errors[name]?.message) {
     return errors[name].message;
@@ -94,4 +126,4 @@ function showError(name: string, errors: any) {
   }
 }
 
-export { Form, Input, InputPass };
+export { Form, Input, InputPass, Select };
