@@ -16,7 +16,7 @@ function Register() {
   };
 
   return (
-    <div className="flex md:h-screen-75 my-10 md:m-0">
+    <div className="flex my-10 ">
       <div className="m-auto px-10 py-16 shadow-md rounded-lg w-128 bg-gray-50">
         <h1 className="text-center text-4xl mb-6">Register</h1>
         <Form onSubmit={onSubmit} submitBtn="Register">
@@ -24,7 +24,7 @@ function Register() {
           <Input name="username" />
           <InputPass name="password" />
           <Input name="phone" />
-          <Input name="email" rq={false} />
+          <Input name="email" />
         </Form>
         <div className="relative">
           <div className="flex gap-4 absolute justify-center w-full top-11">

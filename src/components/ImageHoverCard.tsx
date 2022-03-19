@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 interface Iprops {
+  id?: number;
   slug: string;
   icon: string;
   title: string;

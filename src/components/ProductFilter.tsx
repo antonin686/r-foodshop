@@ -14,9 +14,17 @@ function ProductFilter({ filterConfig }: Iprops) {
   const [data, setData] = useState<any>(null);
   useEffect(() => {
     setData(null);
-    axios.post(ProductFilterUrl, { config: config }).then((res) => {
-      setData(res.data);
-    });
+    axios
+      .post(ProductFilterUrl, JSON.stringify(config), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        //console.log(res.data);
+        setData(res.data);
+      })
+      .catch((error) => console.log(error));
   }, [config]);
 
   return (

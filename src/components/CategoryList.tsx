@@ -7,8 +7,8 @@ interface IimageHoverCard {
   id: string;
   icon: string;
   title: string;
-  desc: string;
-  cover_img: string;
+  description: string;
+  image: string;
   slug: string;
 }
 
@@ -24,8 +24,8 @@ function CategoryList() {
             slug={item.slug}
             icon={item.icon}
             title={item.title}
-            desc={item.desc}
-            cover_img={item.cover_img}
+            desc={item.description}
+            cover_img={item.image}
           />
         ))
       ) : (

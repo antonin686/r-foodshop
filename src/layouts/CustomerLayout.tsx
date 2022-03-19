@@ -22,11 +22,11 @@ function CustomerLayout() {
           <img
             className="w-32 md:block hidden"
             src={auth.user.image ? auth.user.image : personImg}
-            alt={auth.user.name}
+            alt={auth.user.username}
           />
           <div>
             <p>Hello,</p>
-            <p className="font-bold">{auth.user.name}</p>
+            <p className="font-bold">{auth.user.first_name + ' ' + auth.user.last_name}</p>
           </div>
         </div>
         <div className="">

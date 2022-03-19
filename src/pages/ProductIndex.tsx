@@ -3,7 +3,7 @@ import ProductFilter from "../components/ProductFilter";
 
 function ProductIndex() {
   const [config, setConfig] = useState({
-    search: null,
+    search: "",
     filters: [
       {
         title: "category",

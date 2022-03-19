@@ -1,6 +1,6 @@
 import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { FaHome } from "react-icons/fa";
-import { Link, UNSAFE_NavigationContext, useLocation } from "react-router-dom";
+import { Link, UNSAFE_NavigationContext } from "react-router-dom";
 import { BrowserHistory } from "history";
 
 interface Iprops {

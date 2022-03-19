@@ -21,8 +21,9 @@ module.exports = {
         },
       },
       colors: {
-        theme: "rgb(239, 68, 68)",
+        "theme": "rgb(239, 68, 68)",
         "theme-light": "rgb(254, 202, 202)",
+        "theme-dark": "rgb(185, 28, 28)"
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",

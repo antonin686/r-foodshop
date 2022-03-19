@@ -3,7 +3,7 @@ import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { Form, Input } from "../components/FormGroup";
 import SocialLoginBtn from "../components/SocialLoginBtn";
-import { loginUrl } from "../helpers/apiLinks";
+import { loginUrl, userDetailUrl } from "../helpers/apiLinks";
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { toast, timedModal } from "../helpers/SweetAlert";
@@ -19,17 +19,34 @@ function Login() {
     axios
       .post(loginUrl, data)
       .then((res) => {
-        toast
-          .fire({
-            icon: "success",
-            title: "Credentials Matched",
-            position: "bottom",
-            background: color.success,
-            color: "#fff",
+        axios
+          .get(userDetailUrl, {
+            headers: {
+              Authorization: "JWT " + res.data.access,
+            },
           })
-          .then(() => {
-            auth.login(res.data);
-            navigate(from, { replace: true });
+          .then((resp) => {
+            toast
+              .fire({
+                icon: "success",
+                title: "Credentials Matched",
+                position: "bottom",
+                background: color.success,
+                color: "#fff",
+              })
+              .then(() => {
+                auth.login({
+                  token: res.data.access,
+                  user: resp.data,
+                });
+                navigate(from, { replace: true });
+              });
+          })
+          .catch((error) => {
+            timedModal.fire({
+              icon: "error",
+              title: "Credentials Invalid",
+            });
           });
       })
       .catch((error) => {
