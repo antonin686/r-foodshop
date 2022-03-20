@@ -1,6 +1,7 @@
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AddressUrl } from "../../helpers/apiLinks";
 import useAuth from "../../hooks/useAuth";
@@ -15,7 +16,8 @@ interface Iprops {
 
 function AddressBook({ id, city, post_code, address, refetch }: Iprops) {
   const auth = useAuth();
-  const editHandler = () => {};
+  const nagivate = useNavigate();
+  const editHandler = () => nagivate(`/customer/addresses/${id}`);
   const deleteHandler = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -30,7 +32,7 @@ function AddressBook({ id, city, post_code, address, refetch }: Iprops) {
         axios
           .delete(`${AddressUrl}/${id}`, {
             headers: {
-              Authorization: auth.token,
+              'Authorization': auth.token,
             },
           })
           .then(() => {

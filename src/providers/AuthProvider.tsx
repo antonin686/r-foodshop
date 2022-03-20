@@ -10,7 +10,7 @@ function AuthProvider(props: any) {
   const reducer = (state: any, action: any) => {
     switch (action.type) {
       case "LOGIN":
-        return { ...state, token: action.payload.token, user: action.payload.user };
+        return { ...state, token: 'JWT ' + action.payload.token, user: action.payload.user };
       case "LOGOUT":
         return initialState;
       default:

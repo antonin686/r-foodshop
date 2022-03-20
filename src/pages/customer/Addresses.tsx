@@ -3,10 +3,12 @@ import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import AddressBook from "../../components/basic/AddressBook";
 import { CustomerAddressesUrl } from "../../helpers/apiLinks";
+import useAuth from "../../hooks/useAuth";
 import useGetFetch from "../../hooks/useGetFetch";
 
 function Addresses() {
-  const [items, refetch]: any = useGetFetch(CustomerAddressesUrl);
+  const auth = useAuth()
+  const [items, refetch]: any = useGetFetch(CustomerAddressesUrl, auth.token);
 
   return (
     <div>

@@ -12,6 +12,10 @@ function CustomerLayout() {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
+  const logOutHandler = () => {
+    auth.logout();
+  };
+
   return (
     <div className="container mx-auto">
       <div className="mt-5 mx-4 md:mx-0">
@@ -30,7 +34,7 @@ function CustomerLayout() {
           </div>
         </div>
         <div className="">
-          <button className="flex items-center gap-1 c-primary-btn">
+          <button onClick={logOutHandler} className="flex items-center gap-1 c-primary-btn">
             <FiLogOut /> Logout
           </button>
         </div>

@@ -5,9 +5,11 @@ import CategoryIndex from "./pages/CategoryIndex";
 import CategoryProducts from "./pages/CategoryProducts";
 import Checkout from "./pages/Checkout";
 import AddressCreate from "./pages/customer/AddressCreate";
+import AddressEdit from "./pages/customer/AddressEdit";
 import Addresses from "./pages/customer/Addresses";
 import Dashboard from "./pages/customer/Dashboard";
 import Account from "./pages/customer/Dashboard";
+import Orders from "./pages/customer/Orders";
 import Login from "./pages/Login";
 import ProductIndex from "./pages/ProductIndex";
 import Register from "./pages/Register";
@@ -30,6 +32,8 @@ function App() {
             <Route path="" element={<Dashboard />} />
             <Route path="addresses" element={<Addresses />} />
             <Route path="addresses/create" element={<AddressCreate />} />
+            <Route path="addresses/:id" element={<AddressEdit />} />
+            <Route path="orders" element={<Orders />} />
           </Route>
         </Route>
         <Route path="/admin" element={CategoryProducts} />

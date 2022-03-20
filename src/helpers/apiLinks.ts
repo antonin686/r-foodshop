@@ -8,6 +8,7 @@ export const CategoryUrl: string = `${hostApi}/categories`;
 export const ProductUrl: string = `${hostApi}/products`;
 export const CustomerUrl: string = `${hostApi}/customers`;
 export const AddressUrl: string = `${hostApi}/addresses`;
+export const OrderUrl: string = `${hostApi}/orders/`;
 export const CustomerAddressesUrl: string = `${hostApi}/customers/addresses/`;
 export const ProductQueryUrl: string = `${hostApi}/products/query`;
 export const ProductFilterUrl: string = `${hostApi}/products/custom/filter`;

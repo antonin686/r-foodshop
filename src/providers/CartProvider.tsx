@@ -40,6 +40,8 @@ function CartProvider(props: any) {
           total: action.payload.total,
           count: action.payload.count,
         };
+        case "CLEAR_CART":
+          return initialState;
       default:
         return state;
     }

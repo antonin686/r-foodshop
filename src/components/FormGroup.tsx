@@ -7,7 +7,9 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<any>(defaultValues);
+  } = useForm<any>({
+    defaultValues: defaultValues
+  });
   return (
     <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
       {Array.isArray(children)
@@ -101,10 +103,10 @@ function Select({
       <label className="capitalize">
         {name} {!rq && "(Optional)"}
       </label>
-      <select {...register(name, rule)} className="c-input" {...rest}>
-        <option>Select an item</option>
+      <select  {...register(name, rule)} className="c-input" {...rest}>
+        <option  value="">Please select a {name}</option>
         {options.map((option: any, index: number) => (
-          <option key={index} value={option.value}>{option.title}</option>
+          <option key={index} value={option.value}>{option.label}</option>
         ))}
       </select>
       <p className="text-red-600">{showError(name, errors)}</p>

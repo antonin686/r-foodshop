@@ -1,13 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
 import axios, { AxiosRequestConfig } from "axios";
 
-function useGetFetch(url: string | null) {
+
+function useGetFetch(url: string | null, token?: string) {
   
 
   const [state, setstate] = useState<any>(null);
 
   const getMethod = useCallback(() => {
-    let option: AxiosRequestConfig = {};
+    let option: AxiosRequestConfig = {headers: {
+      'Authorization':  token ? token : "",
+    },};
     if(!url) return null;
     axios
       .get(url, option)

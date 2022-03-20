@@ -18,9 +18,10 @@ const timedModal = Swal.mixin({
   toast: false,
   position: 'center',
   showConfirmButton: false,
-  timer: 3000,
+  timer: 1500,
   timerProgressBar: true,
 })
+
 
 export {
   toast,

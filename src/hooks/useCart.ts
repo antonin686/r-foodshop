@@ -18,6 +18,14 @@ function useCart() {
     updateCartCount();
   };
 
+  const clear = () => {
+    dispatch({ type: "CLEAR_CART"});
+    localStorage.clear();
+    updateCartCount();
+  };
+
+  
+
   useEffect(() => {
     if (localStorage.getItem("cart")) {
       let cart = JSON.parse(localStorage.getItem("cart") || "{}");
@@ -49,6 +57,7 @@ function useCart() {
     count: state.count,
     add,
     remove,
+    clear
   };
 }
 
