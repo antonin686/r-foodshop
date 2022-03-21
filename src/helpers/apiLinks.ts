@@ -1,7 +1,8 @@
-//const hostApi = "http://localhost:8000/api";
-const hostApi = "http://localhost:8000/api";
-const hostAuth = "http://localhost:8000/auth";
-//const hostApi = "https://foodshop-api.antoninislam.com/api";
+// const hostApi = "http://localhost:8000/api";
+// const hostAuth = "http://localhost:8000/auth";
+const hostApi = "https://foodshop-backend-django.herokuapp.com/api";
+const hostAuth = "https://foodshop-backend-django.herokuapp.com/auth";
+export const hostAdmin = "https://foodshop-backend-django.herokuapp.com/admin";
 
 export const homePageUrl: string = `${hostApi}/pageinfo/defaultPage`;
 export const CategoryUrl: string = `${hostApi}/categories`;

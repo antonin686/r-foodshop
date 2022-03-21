@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import CustomerLayout from "./layouts/CustomerLayout";
 import Layout from "./layouts/Layout";
+import AdminRedirect from "./pages/AdminRedirect";
 import CategoryIndex from "./pages/CategoryIndex";
 import CategoryProducts from "./pages/CategoryProducts";
 import Checkout from "./pages/Checkout";
 import AddressCreate from "./pages/customer/AddressCreate";
 import AddressEdit from "./pages/customer/AddressEdit";
-import Addresses from "./pages/customer/Addresses";
+import AddressIndex from "./pages/customer/AddressIndex";
 import Dashboard from "./pages/customer/Dashboard";
-import Account from "./pages/customer/Dashboard";
 import Orders from "./pages/customer/Orders";
 import Login from "./pages/Login";
 import ProductIndex from "./pages/ProductIndex";
@@ -30,13 +30,13 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="customer/*" element={<CustomerLayout />}>
             <Route path="" element={<Dashboard />} />
-            <Route path="addresses" element={<Addresses />} />
+            <Route path="addresses" element={<AddressIndex />} />
             <Route path="addresses/create" element={<AddressCreate />} />
-            <Route path="addresses/:id" element={<AddressEdit />} />
+            <Route path="addresses/edit/:id" element={<AddressEdit />} />
             <Route path="orders" element={<Orders />} />
           </Route>
         </Route>
-        <Route path="/admin" element={CategoryProducts} />
+        <Route path="/admin" element={<AdminRedirect/>} />
       </Routes>
     </AuthProvider>
   );

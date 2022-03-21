@@ -17,7 +17,7 @@ interface Iprops {
 function AddressBook({ id, city, post_code, address, refetch }: Iprops) {
   const auth = useAuth();
   const nagivate = useNavigate();
-  const editHandler = () => nagivate(`/customer/addresses/${id}`);
+  const editHandler = () => nagivate(`/customer/addresses/edit/${id}`);
   const deleteHandler = () => {
     Swal.fire({
       title: "Are you sure?",

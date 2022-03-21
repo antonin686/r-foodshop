@@ -25,11 +25,15 @@ function Breadcrumb({ start }: Iprops) {
           let newCrumb: Icrumb[] = [];
           let currPath = start;
           splited.forEach((item: string, index: number) => {
-            if (index == splited.length - 1) {
+            if (item == "edit") {
               newCrumb.push({ title: item });
             } else {
-              currPath = currPath + "/" + item;
-              newCrumb.push({ title: item, to: currPath });
+              if (index == splited.length - 1) {
+                newCrumb.push({ title: item });
+              } else {
+                currPath = currPath + "/" + item;
+                newCrumb.push({ title: item, to: currPath });
+              }
             }
           });
           setCrumbs(newCrumb);

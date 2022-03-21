@@ -6,7 +6,7 @@ import { CustomerAddressesUrl } from "../../helpers/apiLinks";
 import useAuth from "../../hooks/useAuth";
 import useGetFetch from "../../hooks/useGetFetch";
 
-function Addresses() {
+function AddressIndex() {
   const auth = useAuth()
   const [items, refetch]: any = useGetFetch(CustomerAddressesUrl, auth.token);
 
@@ -36,4 +36,4 @@ function Addresses() {
   );
 }
 
-export default Addresses;
+export default AddressIndex;
