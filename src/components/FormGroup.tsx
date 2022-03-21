@@ -8,7 +8,7 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
     handleSubmit,
     formState: { errors },
   } = useForm<any>({
-    defaultValues: defaultValues
+    defaultValues: defaultValues,
   });
   return (
     <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
@@ -36,7 +36,7 @@ function Form({ defaultValues, children, onSubmit, submitBtn }: any) {
   );
 }
 
-function Input({ register, name, rq = true, rule, cStyle, errors, ...rest }: any) {
+function Input({ register, name, rq = true, rule, cStyle, errors, label, ...rest }: any) {
   rule = { ...rule, required: rq };
 
   if (!cStyle) {
@@ -46,7 +46,7 @@ function Input({ register, name, rq = true, rule, cStyle, errors, ...rest }: any
   return (
     <div className="relative">
       <label className="capitalize">
-        {name} {!rq && "(Optional)"}
+        {label ? label : name} {!rq && "(Optional)"}
       </label>
       <input {...register(name, rule)} className={cStyle} {...rest} />
       <p className="text-red-600">{showError(name, errors)}</p>
@@ -103,10 +103,12 @@ function Select({
       <label className="capitalize">
         {name} {!rq && "(Optional)"}
       </label>
-      <select  {...register(name, rule)} className="c-input" {...rest}>
-        <option  value="">Please select a {name}</option>
+      <select {...register(name, rule)} className="c-input" {...rest}>
+        <option value="">Please select a {name}</option>
         {options.map((option: any, index: number) => (
-          <option key={index} value={option.value}>{option.label}</option>
+          <option key={index} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
       <p className="text-red-600">{showError(name, errors)}</p>

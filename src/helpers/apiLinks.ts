@@ -1,7 +1,7 @@
-// const hostApi = "http://localhost:8000/api";
-// const hostAuth = "http://localhost:8000/auth";
-const hostApi = "https://foodshop-backend-django.herokuapp.com/api";
-const hostAuth = "https://foodshop-backend-django.herokuapp.com/auth";
+const hostApi = "http://localhost:8000/api";
+const hostAuth = "http://localhost:8000/auth";
+// const hostApi = "https://foodshop-backend-django.herokuapp.com/api";
+// const hostAuth = "https://foodshop-backend-django.herokuapp.com/auth";
 export const hostAdmin = "https://foodshop-backend-django.herokuapp.com/admin";
 
 export const homePageUrl: string = `${hostApi}/pageinfo/defaultPage`;
@@ -13,7 +13,7 @@ export const OrderUrl: string = `${hostApi}/orders/`;
 export const CustomerAddressesUrl: string = `${hostApi}/customers/addresses/`;
 export const ProductQueryUrl: string = `${hostApi}/products/query`;
 export const ProductFilterUrl: string = `${hostApi}/products/custom/filter`;
-export const registerUrl: string = `${hostApi}/register`;
+export const registerUrl: string = `${hostApi}/register/`;
 export const loginUrl: string = `${hostAuth}/jwt/create/`;
 export const userDetailUrl: string = `${hostAuth}/users/me/`;
 export const logoutUrl: string = `${hostApi}/logout`;
